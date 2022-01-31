@@ -30,7 +30,9 @@ public class AutoCompletesStepDefs {
 
     @And("Verify all countries are being displayed:")
     public void verifyAllCountriesAreBeingDisplayed(List<String> countries) {
-
+List<String> names = BrowserUtils.getElementsTextFes(autoCompletesPage.listOf);
+assertEquals(countries,names);
+/*
         try {
             List<String> listss = BrowserUtils.getElementsText(autoCompletesPage.listOf);
             assertEquals(countries, listss);
@@ -38,6 +40,8 @@ public class AutoCompletesStepDefs {
             System.out.println(e.getMessage());
         }
 
+
+ */
     }
 
 

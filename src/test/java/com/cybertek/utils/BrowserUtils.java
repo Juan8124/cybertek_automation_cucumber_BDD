@@ -39,7 +39,17 @@ public class BrowserUtils {
         }
         return actualAsString;
     }
+    public static List<String> getElementsTextFes(List<WebElement> webElementList) {
 
+        List<String> actualAsString = new ArrayList<>();
+
+        for (WebElement each : webElementList) {
+            for (String item : each.getText().split("\r?\n")) {
+                actualAsString.add(item );
+            }
+        }
+        return actualAsString;
+    }
 
 
 }

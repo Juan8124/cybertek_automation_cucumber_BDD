@@ -1,4 +1,4 @@
-@AddRemove
+@smoke
 Feature: adding and removing elements
   Agile story: Given user is on cybertek Practice page
   user should be able to add and remove elements once on "Add/Remove Elements" page

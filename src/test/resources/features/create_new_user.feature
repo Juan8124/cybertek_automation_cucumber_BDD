@@ -4,7 +4,7 @@ Feature: Register new User
   Scenario: Create a new User account
     Given User is on automation exercise website
     Then verify User is on homepage
-    And click on Signup/Login button
+    And click on SignupLogin button
     Then verify "New User Signup!" is visible
     And Enter name and email address
     Then click signup button
@@ -16,6 +16,6 @@ Feature: Register new User
     And Click create account button
     Then verify that ACCOUNT CREATED! is visible
     And Click continue button
-    Then verify that "Logged in as JuanTiffanie" text is visible
+    Then verify that the user is logged in
 
 

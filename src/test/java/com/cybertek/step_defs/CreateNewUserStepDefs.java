@@ -3,6 +3,7 @@ package com.cybertek.step_defs;
 import com.cybertek.pages.CreateNewUserPage;
 import com.cybertek.utils.ConfigurationReader;
 import com.cybertek.utils.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +11,7 @@ import org.junit.Assert;
 
 public class CreateNewUserStepDefs {
     CreateNewUserPage page = new CreateNewUserPage();
-
+    Faker faker = new Faker();
     @Given("User is on automation exercise website")
     public void user_is_on_automation_exercise_website() {
         Driver.getDriver().get(ConfigurationReader.getProperty("AutomationExercise.url"));
@@ -21,7 +22,7 @@ public class CreateNewUserStepDefs {
         Assert.assertEquals("Automation Exercise", Driver.getDriver().getTitle());
     }
 
-    @And("click on Signup\\/Login button")
+    @And("click on SignupLogin button")
     public void clickOnSignupLoginButton() {
         page.signupLoginBtn.click();
     }
@@ -32,8 +33,8 @@ public class CreateNewUserStepDefs {
 
     @Then("Enter name and email address")
     public void enter_name_and_email_address() {
-        page.newUserNameBox.sendKeys("JuanTiffanie");
-        page.newUserEmailBox.sendKeys("JuanTiffanie@hotmail.com");
+        page.newUserNameBox.sendKeys(faker.name().username());
+        page.newUserEmailBox.sendKeys(faker.internet().emailAddress());
     }
 
     @Then("click signup button")
@@ -49,7 +50,7 @@ public class CreateNewUserStepDefs {
     @Then("fill details Title, Password, Date of birth")
     public void fill_details_title_name_email_password_date_of_birth() {
         page.mrRadioBtn.click();
-        page.passwordBox.sendKeys("JuanTif");
+        page.passwordBox.sendKeys(faker.internet().password());
         page.fillInBirthday();
     }
 
@@ -82,11 +83,8 @@ public class CreateNewUserStepDefs {
     }
 
 
-    @Then("verify that {string} text is visible")
-    public void verifyThatTextIsVisible(String username) {
-        Assert.assertEquals(username, page.loggedInAsMsg.getText());
+    @Then("verify that the user is logged in")
+    public void verifyThatTheUserIsLoggedIn() {
+        Assert.assertTrue(page.loggedInAsMsg.isDisplayed());
     }
-
-
-
 }

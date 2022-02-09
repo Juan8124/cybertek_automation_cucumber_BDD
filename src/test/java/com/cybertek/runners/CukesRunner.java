@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cybertek/step_defs",
         dryRun = false,
-        tags = ""
+        tags = "@case8Wip"
 )
 
 public class CukesRunner {

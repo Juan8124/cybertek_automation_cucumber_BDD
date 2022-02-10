@@ -1,4 +1,4 @@
-@wip
+@smoke
 Feature: Auto Complete
   given the user is on the practice home page. User should be able to submit "u" to click on autocomplete, selects
   Country type and submits and should get message displayed country should be United states

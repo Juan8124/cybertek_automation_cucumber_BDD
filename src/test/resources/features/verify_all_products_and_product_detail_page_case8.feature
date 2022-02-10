@@ -1,4 +1,4 @@
-@case8Wip
+@smoke
 Feature: verify all products and product detail page
 
   Background:

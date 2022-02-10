@@ -1,4 +1,4 @@
-@case7Wip
+@smoke
 Feature: Verify Test Case Page
 
   Scenario: verify testCase Page

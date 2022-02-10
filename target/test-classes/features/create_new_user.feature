@@ -1,4 +1,4 @@
-@Tifwip
+@smoke
 Feature: Register new User
 
   Scenario: Create a new User account

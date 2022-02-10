@@ -34,7 +34,6 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/CukesRunner*.java</include>
-                        <include>**/FailedRunners.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -103,7 +102,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 
 
